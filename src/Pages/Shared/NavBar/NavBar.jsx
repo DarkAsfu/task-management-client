@@ -39,18 +39,20 @@ const NavBar = () => {
                                                     <span className="relative " >All Task</span>
                                                 </Link>
                                             </li>
-                                            <li>
-                                                <Link to='/addtask' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                                                    <span className="relative " >Add Task</span>
-                                                </Link>
-                                            </li>
                                             {
                                                 user &&
-                                                <li>
-                                                <Link to='/mytask' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                                                    <span className="relative " >My Task</span>
-                                                </Link>
-                                            </li>
+                                                <>
+                                                    <li>
+                                                        <Link to='/mytask' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                                                            <span className="relative " >My Task</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/addtask' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
+                                                            <span className="relative " >Add Task</span>
+                                                        </Link>
+                                                    </li>
+                                                </>
                                             }
                                             <li>
                                                 <Link to='/contact' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
@@ -60,7 +62,7 @@ const NavBar = () => {
                                         </ul>
                                         {
                                             user &&
-                                            <div className="dropdown px-6 -mt-28 md:mt-0">
+                                            <div className="dropdown px-6 -mt-16 md:mt-0">
                                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                                     <div className="w-10 rounded-full">
                                                         {
