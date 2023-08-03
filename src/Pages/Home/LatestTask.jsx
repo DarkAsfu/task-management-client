@@ -9,7 +9,8 @@ const LatestTask = () => {
     console.log(latestTask);
     return (
         <div className="w-10/12 mx-auto mb-14">
-            <h1 className="text-2xl md:text-4xl font-bold text-center my-14 ">Latest Task</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-center mt-14 ">Latest Task</h1>
+            <div className="divider w-60 text-[#FFC107] mx-auto">New Task Here</div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {   latestTask.length >=1 ?
                     (latestTask.slice(0, 6).map(task => <>

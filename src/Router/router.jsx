@@ -6,9 +6,9 @@ import AllTask from "../Pages/AllTask/AllTask";
 import MyTask from "../Pages/MyTask/MyTask";
 import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signup/Signup";
-import Contact from "../Pages/Contact/Contact";
 import PrivateRouter from "../Provider/PrivateRouter";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
+import Contact from "../Pages/Contact/Contact/Contact";
 
 const router = createBrowserRouter([
     {

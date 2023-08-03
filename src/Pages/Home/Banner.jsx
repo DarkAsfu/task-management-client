@@ -27,7 +27,7 @@ const Banner = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col justify-center items-center align-middle mt-32">
-          <h1 className="text-4xl font-semibold mb-4">{title}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">{title}</h1>
           <p className="text-lg mb-6">{subtitle}</p>
           <Link to='/signup' className="block px-6 py-3 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 text-center text-white">Get Started</Link>
         </div>
