@@ -40,7 +40,7 @@ const MyTask = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm divide-y divide-gray-100">
-                                    {tasks.length >= 1 ? (
+                                    {tasks.length >= 0 ? (
                                         tasks.map(task => <MyTaskTable key={task._id} task={task} tasks={tasks} setTasks={setTasks}></MyTaskTable>)
                                     ) : (
                                         <tr>

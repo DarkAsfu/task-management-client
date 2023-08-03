@@ -1,14 +1,16 @@
 import { useContext } from 'react';
 import google from '../../../../public/google.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 const Social = () => {
     const {googleLogIn, gitHubLoginIn, facebookLogIn} = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleGoogle = () =>{
         googleLogIn()
         .then(result =>{
             const googleLoggedUser = result.user;
             console.log(googleLoggedUser);
+            navigate('/')
         })
         .catch(error =>{
             console.log(error.message);
@@ -19,6 +21,7 @@ const Social = () => {
         .then(result =>{
             const gitLoggedIn = result.user;
             console.log(gitLoggedIn);
+            navigate('/')
         })
         .catch(error =>{
             console.log(error.message);
@@ -29,6 +32,7 @@ const Social = () => {
         .then(result =>{
             const facebookLogged = result.user;
             console.log(facebookLogged);
+            navigate('/')
         })
         .catch(error =>{
             console.log(error.message);

@@ -14,7 +14,7 @@ const LatestTask = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {   latestTask.length >=1 ?
                     (latestTask.slice(0, 6).map(task => <>
-                        <div className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card bg-base-100 shadow-xl">
                             <div className="card-body">
                                 <h2 className="card-title">{task?.title}</h2>
                                 <p><span className="font-bold">Description:</span> {task?.description.slice(0, 200)}....</p>

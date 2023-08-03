@@ -1,5 +1,5 @@
 import "@lottiefiles/lottie-player";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Social from "../Shared/Social/Social";
@@ -7,7 +7,7 @@ const Signup = () => {
     const {user, createUser} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     // const location = useLocation();
     // const from = location.state?.from?.pathname || "/"
     console.log(user, createUser);
@@ -37,6 +37,7 @@ const Signup = () => {
             form.reset();
             setSuccess('Succesfully registered please login')
             setError('')
+            navigate('/signin')
         })
         .catch(error => {
             console.log(error.message);

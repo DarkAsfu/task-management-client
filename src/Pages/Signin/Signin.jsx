@@ -1,10 +1,11 @@
 import "@lottiefiles/lottie-player";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import Social from "../Shared/Social/Social";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Signin = () => {
     const { signIn } = useContext(AuthContext)
+    const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleSignIn = (e) =>{
@@ -20,6 +21,7 @@ const Signin = () => {
             setError('')
             setSuccess('Successfully login !!!')
             form.reset();
+            navigate('/')
         })
         .catch(error =>{
             console.log(error.message);

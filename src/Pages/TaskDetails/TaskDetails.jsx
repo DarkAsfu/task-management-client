@@ -1,10 +1,13 @@
 import { useLoaderData } from "react-router-dom";
+import ScrollToTop from "../Shared/ScrollToTop/ScrollToTop";
 
 const TaskDetails = () => {
     const detailsTask = useLoaderData()
     console.log(detailsTask);
     const { title, description, status, email } = detailsTask;
     return (
+        <>
+        <ScrollToTop></ScrollToTop>
         <div className="w-10/12 mx-auto bg-white py-20">
             <h2 className="text-2xl font-semibold mb-4">{title}</h2>
             <div className="mb-4">
@@ -19,6 +22,7 @@ const TaskDetails = () => {
                 <span>{email}</span>
             </div>
         </div>
+        </>
     );
 };
 
