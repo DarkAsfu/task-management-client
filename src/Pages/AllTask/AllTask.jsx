@@ -8,7 +8,7 @@ const AllTask = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setAllTasks(data))
-    }, [url])
+    }, [allTasks])
     return (
         <section className="antialiased bg-gray-100 text-gray-600 py-10 px-4">
             <div className="flex flex-col justify-center">
@@ -37,8 +37,13 @@ const AllTask = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm divide-y divide-gray-100">
-                                    {
-                                        allTasks.map(task => <AllTaskTable key={task._id} task={task}></AllTaskTable>)
+                                    {   allTasks.length>=1 ? (
+                                        allTasks.map(task => <AllTaskTable key={task._id} task={task}></AllTaskTable>)) :  <div className="text-center flex justify-center align-middle my-10">
+                                        <span className="loading loading-ring loading-xs"></span>
+                                        <span className="loading loading-ring loading-sm"></span>
+                                        <span className="loading loading-ring loading-md"></span>
+                                        <span className="loading loading-ring loading-lg"></span>
+                                    </div>
                                     }
                                 </tbody>
                             </table>

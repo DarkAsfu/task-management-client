@@ -6,15 +6,15 @@ const MyTask = () => {
     const { user } = useContext(AuthContext);
     const [tasks, setTasks] = useState([]);
     const url = `http://localhost:5000/mytask?email=${user?.email}`
-    useEffect( () =>{
+    useEffect(() => {
         fetch(url)
-        .then(res => res.json())
-        .then(data => setTasks(data))
+            .then(res => res.json())
+            .then(data => setTasks(data))
     }, [url])
     console.log(tasks);
     return (
         <div>
-           <section className="antialiased bg-gray-100 text-gray-600 py-10 mb-10 px-4">
+            <section className="antialiased bg-gray-100 text-gray-600 py-10 mb-10 px-4">
                 <div className="flex flex-col justify-center">
                     <div className="w-full max-w-6xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
                         <div className="p-3">
@@ -41,8 +41,14 @@ const MyTask = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="text-sm divide-y divide-gray-100">
-                                        {
-                                            tasks.map(task => <MyTaskTable key={task._id} task={task} tasks={tasks} setTasks={setTasks}></MyTaskTable>)
+                                        {tasks.length >= 1 ?
+                                            (tasks.map(task => <MyTaskTable key={task._id} task={task} tasks={tasks} setTasks={setTasks}></MyTaskTable>)) :
+                                            <div className="text-center flex justify-center align-middle my-10">
+                                                <span className="loading loading-ring loading-xs"></span>
+                                                <span className="loading loading-ring loading-sm"></span>
+                                                <span className="loading loading-ring loading-md"></span>
+                                                <span className="loading loading-ring loading-lg"></span>
+                                            </div>
                                         }
                                     </tbody>
                                 </table>
@@ -50,7 +56,7 @@ const MyTask = () => {
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
         </div>
     );
 };

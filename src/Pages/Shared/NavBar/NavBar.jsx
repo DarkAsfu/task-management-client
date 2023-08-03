@@ -31,7 +31,7 @@ const NavBar = () => {
                                         <ul className="px-6 pt-32 text-[#000] text-[17px] space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0 ">
                                             <li>
                                                 <Link to='/' className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#ffc107] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100">
-                                                    <span className="relative text-[#ffc107]" >Home</span>
+                                                    <span className="relative" >Home</span>
                                                 </Link>
                                             </li>
                                             <li>
