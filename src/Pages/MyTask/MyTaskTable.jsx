@@ -77,7 +77,7 @@ const MyTaskTable = ({ task, tasks, setTasks }) => {
                     <div className="font-medium text-gray-800">{task?.title}</div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
-                    <div className="font-medium text-gray-800">{task?.description.slice(0, 30)}</div>
+                    <div className="font-medium text-gray-800">{task?.description.slice(0, 30)}...<Link className="text-[#FFC107]" to={`/taskdetails/${task?._id}`}>see more</Link></div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                     <div className="text-left font-medium text-gray-700">{task?.status}</div>

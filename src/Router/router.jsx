@@ -8,6 +8,7 @@ import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signup/Signup";
 import Contact from "../Pages/Contact/Contact";
 import PrivateRouter from "../Provider/PrivateRouter";
+import TaskDetails from "../Pages/TaskDetails/TaskDetails";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
             {
                 path: '/mytask',
                 element: <PrivateRouter><MyTask></MyTask></PrivateRouter>
+            },
+            {
+                path: '/taskdetails/:id',
+                element: <TaskDetails></TaskDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/alltask/${params.id}`)
             },
             {
                 path: '/contact',
