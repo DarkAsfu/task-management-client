@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const AddTask = () => {
     const {user} = useContext(AuthContext);
     const email = user.email;
+    const name = user.displayName;
     const handleAddTask = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -15,7 +16,8 @@ const AddTask = () => {
             title,
             description,
             status,
-            email
+            email,
+            name
         }
         console.log(task);
         fetch('http://localhost:5000/addtask', {
