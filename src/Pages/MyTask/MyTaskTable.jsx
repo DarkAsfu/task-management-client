@@ -14,7 +14,7 @@ const MyTaskTable = ({ task, tasks, setTasks }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/alltask/${id}`, {
+                fetch(`https://task-management-server-darkasfu.vercel.app/alltask/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -41,8 +41,8 @@ const MyTaskTable = ({ task, tasks, setTasks }) => {
         const updatedStatus = {
             status
         }
-        console.log(updatedStatus, `http://localhost:5000/alltask/status/${id}`);
-        fetch(`http://localhost:5000/alltask/status/${id}`, {
+        console.log(updatedStatus, `https://task-management-server-darkasfu.vercel.app/alltask/status/${id}`);
+        fetch(`https://task-management-server-darkasfu.vercel.app/alltask/status/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

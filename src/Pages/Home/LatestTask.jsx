@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LatestTask = () => {
     const [latestTask, setLatestTask] = useState([]);
-    fetch('http://localhost:5000/alltask')
+    fetch('https://task-management-server-darkasfu.vercel.app/alltask')
         .then(res => res.json())
         .then(data => setLatestTask(data))
     console.log(latestTask);

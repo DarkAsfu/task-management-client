@@ -20,7 +20,7 @@ const AddTask = () => {
             name
         }
         console.log(task);
-        fetch('http://localhost:5000/addtask', {
+        fetch('https://task-management-server-darkasfu.vercel.app/addtask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

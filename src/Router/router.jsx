@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/taskdetails/:id',
                 element: <TaskDetails></TaskDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/alltask/${params.id}`)
+                loader: ({params}) => fetch(`https://task-management-server-darkasfu.vercel.app/alltask/${params.id}`)
             },
             {
                 path: '/contact',

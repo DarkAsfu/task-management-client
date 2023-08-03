@@ -3,7 +3,7 @@ import AllTaskTable from "./AllTaskTable";
 
 const AllTask = () => {
     const [allTasks, setAllTasks] = useState([]);
-    const url = 'http://localhost:5000/alltask';
+    const url = 'https://task-management-server-darkasfu.vercel.app/alltask';
     useEffect( () => {
         fetch(url)
         .then(res => res.json())
@@ -38,12 +38,14 @@ const AllTask = () => {
                                 </thead>
                                 <tbody className="text-sm divide-y divide-gray-100">
                                     {   allTasks.length>=1 ? (
-                                        allTasks.map(task => <AllTaskTable key={task._id} task={task}></AllTaskTable>)) :  <div className="text-center flex justify-center align-middle my-10">
-                                        <span className="loading loading-ring loading-xs"></span>
-                                        <span className="loading loading-ring loading-sm"></span>
-                                        <span className="loading loading-ring loading-md"></span>
-                                        <span className="loading loading-ring loading-lg"></span>
-                                    </div>
+                                        allTasks.map(task => <AllTaskTable key={task._id} task={task}></AllTaskTable>)) :  <tr>
+                                        <td colSpan="number of columns in your table" className="text-center flex justify-center align-middle my-10">
+                                            <span className="loading loading-ring loading-xs"></span>
+                                            <span className="loading loading-ring loading-sm"></span>
+                                            <span className="loading loading-ring loading-md"></span>
+                                            <span className="loading loading-ring loading-lg"></span>
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>
