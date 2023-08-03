@@ -77,7 +77,7 @@ const AddTask = () => {
                         required
                     >
                         <option>Set status</option>
-                        <option value="Incomplete">Incomplete</option>
+                        <option value="Incomplete">Ongoing</option>
                         <option value="Complete">Complete</option>
                     </select>
                 </div>
