@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "site": "task-management-asharaful",
     "ignore": [
       "firebase.json",
       "**/.*",

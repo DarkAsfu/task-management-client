@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AllTaskTable from "./AllTaskTable";
+import ScrollToTop from "../Shared/ScrollToTop/ScrollToTop";
 
 const AllTask = () => {
     const [allTasks, setAllTasks] = useState([]);
@@ -10,7 +11,9 @@ const AllTask = () => {
         .then(data => setAllTasks(data))
     }, [allTasks])
     return (
-        <section className="antialiased bg-gray-100 text-gray-600 py-10 px-4">
+        <>
+            <ScrollToTop></ScrollToTop>
+            <section className="antialiased bg-gray-100 text-gray-600 py-10 px-4">
             <div className="flex flex-col justify-center">
                 <div className="w-full max-w-6xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
                     <div className="p-3">
@@ -54,6 +57,8 @@ const AllTask = () => {
                 </div>
             </div>
         </section>
+        </>
+        
     );
 };
 
